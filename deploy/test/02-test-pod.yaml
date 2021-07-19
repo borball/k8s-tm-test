@@ -25,12 +25,16 @@ spec:
       volumes:
         - name: html
           emptyDir: {}
+        - name: cache
+          emptyDir: {}
       containers:
         - name: 1st
           image: quay.io/bzhai/nginx
           volumeMounts:
             - name: html
               mountPath: /usr/share/nginx/html
+            - name: cache
+              mountPath: /var/cache/
         - name: 2nd
           image: registry.access.redhat.com/ubi8/ubi:8.1
           volumeMounts:
