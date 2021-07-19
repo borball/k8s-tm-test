@@ -11,6 +11,7 @@ metadata:
   name: tm-test
   labels:
     app: tm-test
+namespace: tm-test
 spec:
   replicas: 2
   selector:
