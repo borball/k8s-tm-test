@@ -3,5 +3,7 @@ kind: PerformanceProfile
 metadata:
   name: single-numa-node
 spec:
+  machineConfigPoolSelector:
+    custom-kubelet: tm-scope/pod
   numa:
     topologyPolicy: single-numa-node
