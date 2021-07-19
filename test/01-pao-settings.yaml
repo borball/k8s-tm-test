@@ -1,7 +1,7 @@
 apiVersion: performance.openshift.io/v2
 kind: PerformanceProfile
 metadata:
-  name: tm-test
+  name: single-numa-node
 spec:
   numa:
     topologyPolicy: single-numa-node
