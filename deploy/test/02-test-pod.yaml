@@ -22,26 +22,23 @@ spec:
       labels:
         app: tm-test
     spec:
+      volumes:
+        - name: html
+          emptyDir: {}
       containers:
-        - name: tm-1
-          image: nginx
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "250m"
-            limits:
-              memory: "128Mi"
-              cpu: "250m"
-        - name: tm-2
-          image: nginx
-          ports:
-            - containerPort: 8082
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "250m"
-            limits:
-              memory: "128Mi"
-              cpu: "250m"
+        - name: 1st
+          image: guay.io/bzhai/nginx
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html
+        - name: 2nd
+          image: registry.access.redhat.com/ubi8/ubi:8.1
+          volumeMounts:
+            - name: html
+              mountPath: /html
+          command: ["/bin/sh", "-c"]
+          args:
+            - while true; do
+              date >> /html/index.html;
+              sleep 1;
+              done
