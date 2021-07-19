@@ -27,7 +27,7 @@ spec:
           emptyDir: {}
       containers:
         - name: 1st
-          image: guay.io/bzhai/nginx
+          image: quay.io/bzhai/nginx
           volumeMounts:
             - name: html
               mountPath: /usr/share/nginx/html
