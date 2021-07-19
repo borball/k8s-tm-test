@@ -1,4 +1,0 @@
-# TODO handle namespace with var
-resources:
-  - 01-worker-label.yaml
-  - 02-kubelet-tm.yaml

@@ -4,6 +4,11 @@ metadata:
   name: single-numa-node
 spec:
   machineConfigPoolSelector:
-    custom-kubelet: tm-scope/pod
+    machineconfiguration.openshift.io/role: ht
+  cpu:
+    isolated: "1-15,17-31"
+    reserved: "0,16"
   numa:
     topologyPolicy: single-numa-node
+  nodeSelector:
+    node-role.kubernetes.io/ht: ""

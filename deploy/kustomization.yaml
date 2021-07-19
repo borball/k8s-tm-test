@@ -1,0 +1,11 @@
+# TODO handle namespace with var
+resources:
+- pao-enable/01-pao-namespace.yaml
+- pao-enable/02-pao-operatorgroup.yaml
+- pao-enable/03-pao-subscription.yaml
+- labels/label-ht.yaml
+- labels/mcp-worker-ht.yaml
+- labels/mcp-worker-standard.yaml
+- kubelet-tm-scope/01-kubelet-config.yaml
+- test/01-pao-settings.yaml
+- test/02-test-pod.yaml

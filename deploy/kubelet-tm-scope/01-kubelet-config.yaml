@@ -6,6 +6,6 @@ metadata:
 spec:
   machineConfigPoolSelector:
     matchLabels:
-      custom-kubelet: tm-scope/pod
+      machineconfiguration.openshift.io/role: ht
   kubeletConfig:
     topologyManagerScope: pod
