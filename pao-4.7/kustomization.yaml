@@ -1,0 +1,5 @@
+# TODO handle namespace with var
+resources:
+  - 01-pao-namespace.yaml
+  - 02-pao-operatorgroup.yaml
+  - 03-pao-subscription.yaml

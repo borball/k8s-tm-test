@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tm-test
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tm-test
+  labels:
+    app: tm-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tm-test
+  template:
+    metadata:
+      labels:
+        app: tm-test
+    spec:
+      containers:
+        - name: tm-1
+          image: nginx
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+        - name: tm-2
+          image: nginx
+          ports:
+            - containerPort: 8082
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"

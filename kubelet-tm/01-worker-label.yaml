@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: MachineConfigPool
+metadata:
+  labels:
+    custom-kubelet: tm-scope/pod
+  name: worker

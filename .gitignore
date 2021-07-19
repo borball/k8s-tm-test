@@ -1,0 +1,6 @@
+*.iml
+.idea
+.ansible
+inventory/hosts
+vars/config.yml
+files/*

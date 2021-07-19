@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: KubeletConfig
+metadata:
+  name: custom-config
+spec:
+  machineConfigPoolSelector:
+    matchLabels:
+      custom-kubelet: tm-scope/pod
+  kubeletConfig:
+    topologyManagerScope: pod
