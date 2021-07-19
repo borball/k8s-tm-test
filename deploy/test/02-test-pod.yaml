@@ -22,27 +22,10 @@ spec:
       labels:
         app: tm-test
     spec:
-      volumes:
-        - name: html
-          emptyDir: {}
-        - name: cache
-          emptyDir: {}
       containers:
-        - name: 1st
-          image: quay.io/bzhai/nginx
-          volumeMounts:
-            - name: html
-              mountPath: /usr/share/nginx/html
-            - name: cache
-              mountPath: /var/cache/
-        - name: 2nd
+        - name: tm-1
           image: registry.access.redhat.com/ubi8/ubi:8.1
-          volumeMounts:
-            - name: html
-              mountPath: /html
-          command: ["/bin/sh", "-c"]
-          args:
-            - while true; do
-              date >> /html/index.html;
-              sleep 1;
-              done
+          command: ["/bin/bash", "-c", "sleep 1d"]
+        - name: tm-2
+          image: registry.access.redhat.com/ubi8/ubi:8.1
+          command: ["/bin/bash", "-c", "sleep 10h"]
