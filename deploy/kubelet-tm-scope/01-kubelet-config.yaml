@@ -9,3 +9,5 @@ spec:
       machineconfiguration.openshift.io/role: ht
   kubeletConfig:
     topologyManagerScope: pod
+    topologyManagerPolicy: single-numa-node
+    cpuManagerPolicy: static
