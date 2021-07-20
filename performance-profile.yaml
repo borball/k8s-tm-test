@@ -1,7 +1,8 @@
+---
 apiVersion: performance.openshift.io/v2
 kind: PerformanceProfile
 metadata:
-  name: single-numa-node
+  name: performance-single-numa-node
 spec:
   machineConfigPoolSelector:
     machineconfiguration.openshift.io/role: ht

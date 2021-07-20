@@ -1,0 +1,42 @@
+---
+apiVersion: machineconfiguration.openshift.io/v1
+kind: KubeletConfig
+metadata:
+  name: custom-config
+spec:
+  kubeletConfig:
+    apiVersion: kubelet.config.k8s.io/v1beta1
+    authentication:
+      anonymous: {}
+      webhook:
+        cacheTTL: 0s
+      x509: {}
+    authorization:
+      webhook:
+        cacheAuthorizedTTL: 0s
+        cacheUnauthorizedTTL: 0s
+    cpuManagerPolicy: static
+    cpuManagerReconcilePeriod: 5s
+    evictionPressureTransitionPeriod: 0s
+    fileCheckFrequency: 0s
+    httpCheckFrequency: 0s
+    imageMinimumGCAge: 0s
+    kind: KubeletConfiguration
+    kubeReserved:
+      cpu: 1000m
+      memory: 500Mi
+    nodeStatusReportFrequency: 0s
+    nodeStatusUpdateFrequency: 0s
+    reservedSystemCPUs: 0,4
+    runtimeRequestTimeout: 0s
+    streamingConnectionIdleTimeout: 0s
+    syncFrequency: 0s
+    systemReserved:
+      cpu: 1000m
+      memory: 500Mi
+    topologyManagerPolicy: single-numa-node
+    topologyManagerScope: pod
+    volumeStatsAggPeriod: 0s
+  machineConfigPoolSelector:
+    matchLabels:
+      machineconfiguration.openshift.io/role: ht
